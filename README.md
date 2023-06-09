@@ -3,6 +3,7 @@
 This application use mvc asp.net and provides these services
 
 1- Home Page:
+
   Introduction and overview of the restaurant.
   
   Featured dishes or promotions.
