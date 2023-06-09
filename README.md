@@ -41,4 +41,4 @@ This application use mvc asp.net and provides these services
 
 8- Admin page:
 
-  This page provides the addition, modification or deletion of food
+  This page provides the addition, modification or deletion of food.
