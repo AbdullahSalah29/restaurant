@@ -4,8 +4,11 @@ This application use mvc asp.net and provides these services
 
 1- Home Page:
   Introduction and overview of the restaurant.
+  
   Featured dishes or promotions.
+  
   Reservation or online ordering options.
+  
   
 2- Menu:
   Categorized menu items with descriptions, prices, and dietary information.
