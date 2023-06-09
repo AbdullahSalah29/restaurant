@@ -1,0 +1,175 @@
+﻿@model IEnumerable<restaurant.Models.Food>
+
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Menu";
+    ViewData["Menu"] = "active";
+}
+
+
+<!-- start menu -->
+<div class="menu">
+    <div class="content">
+
+        <div class="container">
+            <div class="row burger-box">
+                <h2 class="title burger-title"> tasty burger</h2>
+                @if (Model.Where(item => item.type == "Burgers").Any())
+                    @foreach (var item in Model)
+                    {
+                        if (item.type == "Burgers")
+                        {
+                            <div class="col-md-6 col-lg-4" id="@item.food_ID">
+                                <div class="menu-box">
+                                    <div class="menu-image"><img src="~/@Url.Content(item.img)" alt="..."></div>
+                                    <h3>   @Html.DisplayFor(modelItem => item.food_name) </h3>
+                                    <p> @Html.DisplayFor(modelItem => item.food_description)</p>
+                                    <div class="price">
+                                        <span>  @Html.DisplayFor(modelItem => item.price) $</span>
+                                        <div class="add-item2">
+                                            
+                                            <div id="quant" class="quant" style="display: none;">
+                                                <div class="number">
+                                                    <a asp-action="Remove" asp-route-id="@item.food_ID"><span class="minus">1-</span></a>
+                                                    <input class="qty" type="text" value="@TempData[Convert.ToString(item.food_ID)]" />
+                                                    <a asp-action="Add" asp-route-id="@item.food_ID"> <span class="plus">+1</span></a>
+                                                </div>
+                                            </div>
+                                            <button id="btn-menu" class="btn btn-menu" >Add to cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        }
+                    }else
+                {
+                    <h3> Nothing to Show</h3>
+                }
+            </div>
+            <div class="row beverage-box">
+                <h2 class="title beverage-title"> tasty beverage</h2>
+                @if (Model.Where(item => item.type == "Beverages").Any())
+                    @foreach (var item in Model)
+                    {
+                        if (item.type == "Beverages")
+                        {
+                            <div class="col-md-6 col-lg-4" id="@item.food_ID">
+                                <div class="menu-box">
+                                    <div class="menu-image"><img src="~/@Url.Content(item.img)" alt="..."></div>
+                                    <h3>   @Html.DisplayFor(modelItem => item.food_name) </h3>
+                                    <p> @Html.DisplayFor(modelItem => item.food_description)</p>
+                                    <div class="price">
+                                        <span>  @Html.DisplayFor(modelItem => item.price) $</span>
+                                        <div class="add-item2">
+                                            <div id="quant" class="quant" style="display: none;">
+                                                <div class="number">
+                                                    <a asp-action="Remove" asp-route-id="@item.food_ID"><span class="minus">1-</span></a>
+                                                    <input class="qty" type="text" value="@TempData[Convert.ToString(item.food_ID)]" />
+                                                    <a asp-action="Add" asp-route-id="@item.food_ID"><span class="plus">+1</span></a>
+                                                </div>
+                                            </div>
+                                            <button id="btn-menu" class="btn btn-menu">Add to cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        }
+                    }else
+                {
+                    <center><h2> nothing</h2></center>
+                }
+
+            </div>
+            <div class="row pizaa-box">
+                <h2 class="title pizza-title"> tasty Pizza</h2>
+                @if (Model.Where(item => item.type == "Pizza").Any())
+                    @foreach (var item in Model)
+                    {
+                        if (item.type == "Pizza")
+                        {
+                            
+                            <div class="col-md-6 col-lg-4" id="@item.food_ID">
+                                <div class="menu-box">
+                                    <div class="menu-image"><img src="~/@Url.Content(item.img)" alt="..."></div>
+                                    <h3>   @Html.DisplayFor(modelItem => item.food_name) </h3>
+                                    <p> @Html.DisplayFor(modelItem => item.food_description)</p>
+                                    <div class="price">
+                                        <span>  @Html.DisplayFor(modelItem => item.price) $</span>
+                                        <div class="add-item2">
+                                            <div id="quant" class="quant" style="display: none;">
+
+                                                <div class="number">
+                                                    <a asp-action="Remove" asp-route-id="@item.food_ID"><span class="minus">1-</span></a>
+                                                    <input class="qty" type="text" value="@TempData[Convert.ToString(item.food_ID)]" />
+                                                    <a asp-action="Add" asp-route-id="@item.food_ID"><span class="plus">+1</span></a>
+                                                </div>
+                                                
+                                            </div>
+                                            <button id="btn-menu" class="btn btn-menu">Add to cart</button>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        }
+                    }else
+                {
+                    <center><h2> nothing</h2></center>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+<script> 
+    var element=document.getElementById('@TempData["Last"]');
+       element.scrollIntoView();
+       console.log(element);
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    var temp='@TempData["check"]' ;
+    
+    $(document).ready(function () {
+        $(".btn-menu").click(function () {
+           
+            if (temp == "yes")
+            {
+                $(this).hide();
+                $(this).siblings('.quant').show();
+            }
+            else alert("you must login first");
+        } ) ;
+   });
+         
+    
+   
+   </script>
+        
+
+          
+   @*    <script>
+    $(document).ready(function () {
+        $('.minus').click(function () {
+            var $input = $(this).parent().find('input');
+            var count = parseInt($input.val()) - 1;
+            count = count < 0 ? 0 : count;
+            $input.val(count);
+            $input.change();
+
+            return false;
+        });
+        $('.plus').click(function () {
+            var $input = $(this).parent().find('input');
+            $input.val(parseInt($input.val()) + 1);
+            $input.change();
+            return false;
+        });
+    });
+</script>*@

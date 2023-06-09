@@ -1,0 +1,48 @@
+﻿@model IEnumerable<restaurant.Models.Order_Food>
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Order";
+    ViewData["Order"] = "active";
+
+}
+<div class="cart" >
+    <div class="cart-background"></div>
+    <div class="container">
+        <table >
+            <tr >
+                <th> Name </th>
+                <th> img </th>
+                <th> price </th>
+                <th> Quantity </th>
+                <th> total</th>
+                <th>add</th>
+                <th>delete</th>
+            </tr>
+            @foreach(var item in Model)
+            {<tr>
+                <td>@item.food.food_name</td>
+                <td><img src="~/@item.food.img" width="30" height="30" /></td>
+                <td>@item.food.price</td>
+                <td>@item.qty</td>
+                <td>@(item.qty * item.food.price)</td>
+                    <td><a asp-controller="Cart" asp-route-id="@item.id" asp-action="increase" class="btn btn-success">Add</a></td>
+                    <td><a asp-action="decrease" asp-route-id="@item.id" class="btn btn-danger">delete</a></td>
+                </tr>
+                
+            }
+        </table>
+        <p  class="total-price"> total cost : @TempData["total"] $</p>
+        <div class="links">
+            <a asp-action="Index" asp-controller="Order" class="link"> Go to checkout</a>
+            <a id="cart" asp-action="Index" asp-asp-controller="Menu" class="link"> continue shoping </a>
+        </div>
+    </div>
+</div>
+<script>
+var element=document.getElementById('cart');
+       element.scrollIntoView();
+       console.log(element);
+</script>

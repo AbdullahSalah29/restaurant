@@ -1,0 +1,545 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    ViewData["Home"] = "active";
+    
+}
+<div id="carouselExampleIndicators"
+     class="carousel slide"
+     data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Slide 1"></button>
+        <button type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+        <button type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="imgs/careousel_1.jpg"
+                 class="d-block w-100 slider-img"
+                 alt="..." />
+            <div class="slider-content">
+                <h1 class="title">Tasty And Delcious</h1>
+                <p class="intro-text">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. A
+                    voluptatem harum distinctio deleniti illo! Quis, quia! Incidunt
+                    beatae, molestiae dignissimos reiciendis, aliquam corrupti
+                    voluptates, nostrum non perferendis consequatur vero cum!
+                </p>
+                <div class="holder-button">
+                    <a asp-action="Index" asp-controller="Menu" class="button menu-btn"> View Menu</a>
+                    <a href="#booking" class="button book-btn"> Book Table </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <img src="imgs/carousel_2.jpg"
+                 class="d-block w-100 slider-img"
+                 alt="..." />
+            <div class="slider-content">
+                <h1 class="title">Tasty And Delcious</h1>
+                <p class="intro-text">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. A
+                    voluptatem harum distinctio deleniti illo! Quis, quia! Incidunt
+                    beatae, molestiae dignissimos reiciendis, aliquam corrupti
+                    voluptates, nostrum non perferendis consequatur vero cum!
+                </p>
+                <div class="holder-button">
+                    <a asp-action="Index" asp-controller="Menu" class="button menu-btn"> View Menu</a>
+                    <a href="#booking" class="button book-btn"> Book Table </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <img src="imgs/carousel_3.jpg"
+                 class="d-block w-100 slider-img"
+                 alt="..." />
+            <div class="slider-content">
+                <h1 class="title">Tasty And Delcious</h1>
+                <p class="intro-text">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. A
+                    voluptatem harum distinctio deleniti illo! Quis, quia! Incidunt
+                    beatae, molestiae dignissimos reiciendis, aliquam corrupti
+                    voluptates, nostrum non perferendis consequatur vero cum!
+                </p>
+                <div class="holder-button">
+                    <a asp-action="Index" asp-controller="Menu" class="button menu-btn"> View Menu</a>
+                    <a href="#booking" class="button book-btn"> Book Table </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<!-- End sliders -->
+<!-- start about  -->
+<div class="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="about-img">
+                    <img src="imgs/about.jpg" alt="..." />
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="about-content">
+                    <div class="section-header">
+                        <p>About us</p>
+                        <h2>Cooking Since 1995</h2>
+                    </div>
+                    <div class="about-text">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Phasellus nec pretium mi. Curabitur facilisis ornare velit non
+                            vulputate. Aliquam metus tortor, auctor id gravida
+                            condimentum, viverra quis sem
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Phasellus nec pretium mi. Curabitur facilisis ornare velit non
+                            vulputate. Aliquam metus tortor, auctor id gravida
+                            condimentum, viverra quis sem. Curabitur non nisl nec nisi
+                            scelerisque maximus. Aenean consectetur convallis porttitor.
+                            Aliquam interdum at lacus non blandit.
+                        </p>
+                        <a asp-controller="Order"
+                           asp-action="index"
+                           class="btn custom-button">
+                            Order Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end about  -->
+<!-- start booking -->
+<div class="booking" id="booking">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="booking-content">
+                    <div class="section-header">
+                        <p>Book A Table</p>
+                        <h2>Book Your Table For Private Dinners & Happy Hours</h2>
+                    </div>
+                    <div class="booking-text">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Phasellus nec pretium mi. Curabitur facilisis ornare velit non
+                            vulputate. Aliquam metus tortor, auctor id gravida
+                            condimentum, viverra quis sem.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Phasellus nec pretium mi. Curabitur facilisis ornare velit non
+                            vulputate. Aliquam metus tortor, auctor id gravida
+                            condimentum, viverra quis sem. Curabitur non nisl nec nisi
+                            scelerisque maximus. Aenean consectetur convallis porttitor.
+                            Aliquam interdum at lacus non blandit.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                @if (!string.IsNullOrEmpty(TempData["err"] as string))
+                {
+                    <script>
+                        alert('@TempData["err"]');
+                    </script>
+                }
+                <div class="booking-form">
+                    <form asp-action="Reserve">    
+                        <div class="control-group">
+                            <input type="text"
+                                name="mobile"
+                                   placeholder="Mobile"
+                                   class="form-control" />
+                            <p class="blok-line"></p>
+                        </div>
+                        <div class="control-group">
+                            <input type="date" name="date" placeholder="Date" class="form-control" />
+                            <p class="blok-line"></p>
+                        </div>
+                        <div class="control-group">
+                            <input type="time"
+                                name="time"
+                                   placeholder="time"
+                                   class="form-control" />
+                            <p class="blok-line"></p>
+                        </div>
+                        <div class="control-group">
+                            <select name="kind" class="form-control form-select-lg" style="background-color:transparent;border-color:white">
+                                <option >Burgers</option>
+                                <option>Pizza</option>
+                                <option>Beverages</option>
+                                <option>Not Now</option>
+
+                            </select>
+                            <br />
+                        </div>
+                        <div class="submit">
+                            <button class="btn btn-custom">Book Now</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end booking -->
+<!-- start chef -->
+
+<div class="chef">
+    <h2 class="main-title">Our <span> Chef </span></h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-lg-3">
+                <div class="chef-box">
+                    <div class="chef-img">
+                        <img src="imgs/chef-1.jpg" alt="...." />
+                        <div class="social-icons">
+                            <div class="link"><i class="fab fa-twitter"></i></div>
+                            <div class="link"><i class="fab fa-facebook-f"></i></div>
+                            <div class="link"><i class="fab fa-youtube"></i></div>
+                            <div class="link"><i class="fab fa-instagram"></i></div>
+                        </div>
+                    </div>
+                    <div class="chef-info">
+                        <h2 class="chef-name">Adam Phillips</h2>
+                        <p>CEO, Co Founder</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="chef-box">
+                    <div class="chef-img">
+                        <img src="imgs/chef-2.jpg" alt="...." />
+                        <div class="social-icons">
+                            <div class="link"><i class="fab fa-twitter"></i></div>
+                            <div class="link"><i class="fab fa-facebook-f"></i></div>
+                            <div class="link"><i class="fab fa-youtube"></i></div>
+                            <div class="link"><i class="fab fa-instagram"></i></div>
+                        </div>
+                    </div>
+                    <div class="chef-info">
+                        <h2 class="chef-name">Terry Samuel</h2>
+                        <p>Commis Chef</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="chef-box">
+                    <div class="chef-img">
+                        <img src="imgs/chef-3.jpg" alt="...." />
+                        <div class="social-icons">
+                            <div class="link"><i class="fab fa-twitter"></i></div>
+                            <div class="link"><i class="fab fa-facebook-f"></i></div>
+                            <div class="link"><i class="fab fa-youtube"></i></div>
+                            <div class="link"><i class="fab fa-instagram"></i></div>
+                        </div>
+                    </div>
+                    <div class="chef-info">
+                        <h2 class="chef-name">Albert Doe</h2>
+                        <p>Master Chef</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="chef-box">
+                    <div class="chef-img">
+                        <img src="imgs/chef-4.jpg" alt="...." />
+                        <div class="social-icons">
+                            <div class="link"><i class="fab fa-twitter"></i></div>
+                            <div class="link"><i class="fab fa-facebook-f"></i></div>
+                            <div class="link"><i class="fab fa-youtube"></i></div>
+                            <div class="link"><i class="fab fa-instagram"></i></div>
+                        </div>
+                    </div>
+                    <div class="chef-info">
+                        <h2 class="chef-name">Jack Dennis</h2>
+                        <p>Kitchen Assistants</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 col-lg-3">
+                <div class="chef-box">
+                    <div class="chef-img">
+                        <img src="imgs/chef-5.jpg" alt="...." />
+                        <div class="social-icons">
+                            <div class="link"><i class="fab fa-twitter"></i></div>
+                            <div class="link"><i class="fab fa-facebook-f"></i></div>
+                            <div class="link"><i class="fab fa-youtube"></i></div>
+                            <div class="link"><i class="fab fa-instagram"></i></div>
+                        </div>
+                    </div>
+                    <div class="chef-info">
+                        <h2 class="chef-name">Robert John</h2>
+                        <p>Sous Chef</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="chef-box">
+                    <div class="chef-img">
+                        <img src="imgs/chef-6.jpg" alt="...." />
+                        <div class="social-icons">
+                            <div class="link"><i class="fab fa-twitter"></i></div>
+                            <div class="link"><i class="fab fa-facebook-f"></i></div>
+                            <div class="link"><i class="fab fa-youtube"></i></div>
+                            <div class="link"><i class="fab fa-instagram"></i></div>
+                        </div>
+                    </div>
+                    <div class="chef-info">
+                        <h2 class="chef-name">David William</h2>
+                        <p>Senior Chef</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="chef-box">
+                    <div class="chef-img">
+                        <img src="imgs/chef-7.jpg" alt="...." />
+                        <div class="social-icons">
+                            <div class="link"><i class="fab fa-twitter"></i></div>
+                            <div class="link"><i class="fab fa-facebook-f"></i></div>
+                            <div class="link"><i class="fab fa-youtube"></i></div>
+                            <div class="link"><i class="fab fa-instagram"></i></div>
+                        </div>
+                    </div>
+                    <div class="chef-info">
+                        <h2 class="chef-name">Peter Kevin</h2>
+                        <p>Meat Chef</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="chef-box">
+                    <div class="chef-img">
+                        <img src="imgs/chef-8.jpg" alt="...." />
+                        <div class="social-icons">
+                            <div class="link"><i class="fab fa-twitter"></i></div>
+                            <div class="link"><i class="fab fa-facebook-f"></i></div>
+                            <div class="link"><i class="fab fa-youtube"></i></div>
+                            <div class="link"><i class="fab fa-instagram"></i></div>
+                        </div>
+                    </div>
+                    <div class="chef-info">
+                        <h2 class="chef-name">Frank Brandon</h2>
+                        <p>Pastry Chef</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- end chef -->
+
+<!-- start menu -->
+<div class="menu">
+    <div class="landing menu-landing">
+        <div class="intro-text">
+            <h2 class="title">Our Menu</h2>
+            <div class="links">
+                <a asp-controller="Home" asp-action="Index" class="home link">
+                    Home /
+                </a>
+                <a asp-controller="Menu" asp-action=Index class="Menu link"> Menu </a>
+            </div>
+        </div>
+    </div>
+    <!-- start feature  -->
+    <div class="feature">
+        <h2 class="main-title">Our <span> feature </span></h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-item">
+                        <div class="images">
+                            <i class="fas fa-heart"></i><img src="imgs/feature-1.jpg" alt="..." />
+                        </div>
+                        <h2>Burgers</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet elit. Phasel nec pretium mi.
+                            Curabit facilis ornare velit non vulputa. Aliquam metus tortor
+                            auctor quis sem.
+                        </p>
+                        <a href="#burgers">View Menu</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-item second-item">
+                        <div class="images">
+                            <i class="fas fa-heart"></i><img src="imgs/feature-2.jpg" alt="..." />
+                        </div>
+                        <h2>Snacks</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet elit. Phasel nec pretium mi.
+                            Curabit facilis ornare velit non vulputa. Aliquam metus tortor
+                            auctor quis sem.
+                        </p>
+                        <a href="#snacks">View Menu</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-item">
+                        <div class="images">
+                            <i class="fas fa-heart"></i><img src="imgs/feature-3.jpg" alt="..." />
+                        </div>
+                        <h2>Beverages</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet elit. Phasel nec pretium mi.
+                            Curabit facilis ornare velit non vulputa. Aliquam metus tortor
+                            auctor quis sem.
+                        </p>
+                        <a href="#beverages">View Menu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end Feature -->
+<!-- end menu -->
+<!-- start contact us -->
+<div class="contact">
+    <div class="content">
+        <h2 class="main-title"><span>Contact</span> Us</h2>
+        <div class="container">
+            <div class="row contact-information">
+                <div class="col-md-6 col-lg-3">
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt" style="color: white"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Address</h3>
+                            <p>123 Street, NY, USA</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt" style="color: white"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Call Us</h3>
+                            <p>+012 345 6789</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope" style="color: white"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Email Us</h3>
+                            <p>info@example.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fas fa-share" style="color: white"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Follow Us</h3>
+                            <div class="contact-social-icon">
+                                <i class="fab fa-twitter"></i>
+                                <i class="fab fa-facebook"></i>
+                                <i class="fab fa-youtube"></i>
+                                <i class="fab fa-linkedin-in"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row contact-form">
+                <div class="col-md-6">
+                    <div class="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1600663868074!5m2!1sen!2sbd"
+                                frameborder="0"
+                                style="border: 0"
+                                allowfullscreen=""
+                                aria-hidden="false"
+                                tabindex="0"></iframe>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <form>
+                        <div class="control-group">
+                            <input type="text"
+                                   placeholder="Your Name"
+                                   class="form-control"
+                                   required />
+                            <p class="block-line"></p>
+                        </div>
+                        <div class="control-group">
+                            <input type="email"
+                                   placeholder="Your Email"
+                                   class="form-control"
+                                   required />
+                            <p class="block-line"></p>
+                        </div>
+                        <div class="control-group">
+                            <input type="text"
+                                   placeholder="subject"
+                                   class="form-control"
+                                   required />
+                            <p class="block-line"></p>
+                        </div>
+                        <div class="control-group">
+                            <textarea class="form-control" placeholder="Message">
+Message</textarea>
+                            <p class="block-line"></p>
+                        </div>
+                        <div class="button">
+                            <a href="#" class="btn custom-button"> Send Message</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".btn-menu").click(function () {
+            $(this).hide();
+            $(this).siblings('.quant').show();
+        });
+    });
+</script>

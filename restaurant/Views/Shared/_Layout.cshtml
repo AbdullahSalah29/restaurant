@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - restaurant</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/restaurant.styles.css" asp-append-version="true" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light ">
+            <div class="container">
+                <h3><span><i class="fas fa-utensils"></i></span> Food</h3>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item ">
+                            <a class="nav-link @ViewData["Home"] p-2 p-lg-3" asp-controller="Home" asp-action="Index" aria-current="page" >Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @ViewData["Menu"] p-2 p-lg-3" aria-current="page" asp-controller="Menu" asp-action="Index">Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  @ViewData["Order"] p-2 p-lg-3" aria-current="page" asp-controller="Order" asp-action="Index">order</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @ViewData["About"] p-2 p-lg-3" asp-controller="AboutUs" asp-action="Index">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @ViewData["Contact"] p-2 p-lg-3" asp-controller="Contact" asp-action="Index">Contact</a>
+                        </li>
+                        @if (ViewData["IsAdmin"] != null)
+                        {
+                            <li class="nav-item ">
+                                <a class="nav-link @ViewData["admin"] p-2 p-lg-3" asp-controller="admin" asp-action="show" >admin</a>
+                        </li>}
+                        @{
+                            if (ViewData["IsLoggedIn"] == null)
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link @ViewData["Register"] p-2 p-lg-3" asp-controller="Register" asp-action="Index"> register</a>
+                                </li>
+                            }else
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link @ViewData["Register"] p-2 p-lg-3" asp-controller="Register" asp-action="Logout"> Logout</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a asp-action="Index" asp-controller="UserInfo"> <img src="~/imgs/@ViewData["img"]" style="border:1 solid white;border-radius:100%;width:50;height:50px; margin-right:15px"></a>
+                                </li>
+                                <div class="cart"><a asp-action="Index" asp-controller="Cart"><i class="fas fa-cart-plus ico"></i></a></div>
+                            }}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+        <div class="footer">
+            <div class="container">
+                <div class="row box">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="footer-contact">
+                            <h2>Our Address</h2>
+                            <p class="address"> <i class="fa fa-map-marker-alt"></i>  123 Street, New York, USA</p>
+                            <p class="phone"> <i class="fas fa-phone-alt"></i>  +012 345 67890</p>
+                            <p class="email"><i class="fa fa-envelope"></i>  info@example.com</p>
+                            <div class="footer-social">
+                                <div class="link"><i class="fab fa-twitter"></i></div>
+                                <div class="link"><i class="fab fa-facebook-f"></i></div>
+                                <div class="link"><i class="fab fa-youtube"></i></div>
+                                <div class="link"><i class="fab fa-instagram"></i></div>
+                                <div class="link"><i class="fab fa-linkedin-in"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="footer-links">
+                            <h2>Quick Links</h2>
+                            <a href="#"> <i class="fas fa-angle-right"></i> Terms of use</a>
+                            <a href="#"> <i class="fas fa-angle-right"></i> Privacy policy</a>
+                            <a href="#"> <i class="fas fa-angle-right"></i> Cookies</a>
+                            <a href="#"> <i class="fas fa-angle-right"></i> Help</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="footer-newsletter">
+                            <h2>New Sletter</h2>
+                            <p class="info">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit
+                                <br/>Quod aperiam distinctio voluptatem quisquam
+                                adipisci veniam
+                            </p>
+                            <form>
+                                <input type="text" class="form-control" placeholder="Enter Your Email">
+                                <button class="btn custom-btn">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <p>Copyright © <a href="#">Tasty Food</a>, All Right Reserved</p>
+                <p>Designed By <a href="#">Team SWD</a></p>
+            </div>
+        </div>
+    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/main.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

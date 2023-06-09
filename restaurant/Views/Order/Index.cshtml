@@ -1,0 +1,52 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model restaurant.Models.Order;
+@{
+    ViewData["Title"] = "Order";
+    ViewData["Order"] = "active";
+}
+
+<div class="order">
+    <span class="order-now"> Order Now </span>
+    <h3> Free And Fast </h3>
+    <div class="container">
+        @if(TempData["error"]!=null)
+        {
+            <font size="2.5" color="red">
+                @TempData["error"];
+            </font>
+        }
+        <form asp-action="MakeOrder">
+
+            <div class="div holder">
+                <label for="username" class="label">Your order</label>
+                <textarea placeholder="@Model.user.name" id="username" readonly disabled ></textarea>
+            </div>
+
+            <div class="holder">
+                <label for="order" class="label">Your Order</label>
+                <input type="text" id="order" readonly value="@Model.order_ID" disabled placeholder="Enter Food Name">
+            </div>
+
+            <div class="holder">
+                <label for="much" class="label">How Much</label>
+                <input type="number" value="@Model.price" step="1" start="1" readonly disabled>
+            </div>
+
+            <div class="holder">
+                <label for="number" class="label">Your Number</label>
+                <input type="text" name="number" value="@Model.phone_number" required placeholder="Enter Your Number">
+            </div>
+
+            <div class="holder">
+                <label for="address" class="label">Your Address</label>
+                <textarea name="address" required>@Model.address </textarea>
+            </div>
+            <div class="button"><input type="submit" class="btn" value="Order Now"/></div>
+        </form>
+
+    </div>
+</div>
+ 

@@ -1,0 +1,52 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "About";
+    ViewData["About"] = "active";
+}
+<div class="about">
+    <div class="landing about-landing">
+        <div class="intro-text">
+            <h2 class="title">About Us</h2>
+            <div class="links">
+                <a asp-controller="Home" asp-action="index" class="home link"> Home / </a>
+                <a asp-controller="AboutUs" asp-action="index" class="about link"> About </a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="about-img">
+                    <img src="imgs/about.jpg" alt="...">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="about-content">
+                    <div class="section-header">
+                        <p>About us</p>
+                        <h2>Cooking Since 1995</h2>
+                    </div>
+                    <div class="about-text">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Phasellus nec pretium mi. Curabitur facilisis ornare velit
+                            non vulputate. Aliquam metus tortor, auctor id gravida condimentum,
+                            viverra quis sem
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Phasellus nec pretium mi. Curabitur facilisis ornare velit
+                            non vulputate. Aliquam metus tortor, auctor id gravida
+                            condimentum, viverra quis sem. Curabitur non nisl nec nisi
+                            scelerisque maximus. Aenean consectetur convallis porttitor.
+                            Aliquam interdum at lacus non blandit.
+                        </p>
+                        <a asp-action="Index" asp-controller="Menu" class="btn custom-button"> order Now </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

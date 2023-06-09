@@ -1,0 +1,179 @@
+﻿@model IEnumerable<restaurant.Models.Order_Food>;
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Order";
+    ViewData["Order"] = "active";
+}
+
+<div class="payment">
+    <div class="landing payment-landing">
+        <div class="intro-text">
+            <h2 class="title"> payment Now </h2>
+            <div class="links">
+                <a asp-action="Index" asp-controller="Home" class="home link"> Home / </a>
+                <a href="" class="contact link"> payment </a>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <h2 class="main-title"><span> payment </span></h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-lg-0 mb-3">
+                    <div class="card p-3">
+                        <div class="img-box">
+                            <img src="~/imgs/visa-logo.png" alt="...">
+                        </div>
+                        <div class="number mt-2">
+                            <p class="fw-bold" for="">**** **** **** 1060</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <p><span class="fw-bold">Expiry date :</span><span> 10/16</span></p>
+                            <p><span class="fw-bold">Name :</span><span> Kumar</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-lg-0 mb-3">
+                    <div class="card p-3">
+                        <div class="img-box">
+                            <img src="~/imgs/mastercard-logo.png" alt="...">
+                        </div>
+                        <div class="number mt-2">
+                            <p class="fw-bold" for="">**** **** **** 1060</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <p><span class="fw-bold">Expiry date :</span><span> 10/16</span></p>
+                            <p><span class="fw-bold">Name :</span><span> Kumar</span></p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-4 mb-lg-0 mb-3">
+                    <div class="card p-3">
+                        <div class="img-box">
+                            <img src="~/imgs/discover-logo.png" alt="...">
+                        </div>
+                        <div class="number mt-2">
+                            <p class="fw-bold"> **** **** **** 1060 </p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <p><span class="fw-bold">Expiry date :</span><span> 10/16</span></p>
+                            <p><span class="fw-bold">Name :</span><span> Kumar</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 mt-4">
+                    <div class="card p-3 ">
+                        <p class="mb-0 fw-bold h4">Payment Methods</p>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="card p-3">
+                        <div class="card-body border p-0">
+                            <p>
+                                <a class="btn  w-100 h-100 d-flex align-items-center justify-content-between"
+                                   data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="true"
+                                   aria-controls="collapseExample">
+                                    <span class="fw-bold">PayPal</span>
+                                </a>
+                            </p>
+                            <div class="collapse p-3 pt-0" id="collapseExample">
+                                <div class="row">
+                                    <div class="col-8">
+                                        <p class="h4 mb-0">Summary</p>
+                                        <p class="mb-0"><span class="fw-bold">Product:</span><span class="name">: Name of product</span></p>
+                                        <p class="mb-0"><span class="fw-bold">Price:</span><span class="price">:$452.90</span></p>
+                                        <p class="mb-0">
+                                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque nihil neque
+                                            quisquam aut
+                                            repellendus, dicta vero? Animi dicta cupiditate, facilis provident quibusdam ab
+                                            quis,
+                                            iste harum ipsum hic, nemo qui!
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body border p-0">
+                            <p>
+                                <a class="btn  w-100 h-100 d-flex align-items-center justify-content-between"
+                                   data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="true"
+                                   aria-controls="collapseExample">
+                                    <span class="fw-bold">Credit Card</span>
+                                </a>
+                            </p>
+                            <div class="collapse show p-3 pt-0" id="collapseExample">
+                                <div class="row">
+                                    <div class="col-lg-5 mb-lg-0 mb-3">
+                                        <p class="h4 mb-0">Summary</p>
+                                       
+                                        <p class="mb-0">
+                                            <span class="fw-bold">Price: @TempData["total"] $</span>
+                                            <span class="price"></span>
+                                        </p>
+                                        <p class="mb-0">
+                                            Details:
+                                            <br />
+                                           @foreach(var item in Model)
+                                            {
+                                                <p>@item.food.food_name  quantity= @item.qty price= @item.food.price$ </p>
+                                            }
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-7">
+                                       @if(Convert.ToBoolean(TempData["ok"])==true)
+                                       {
+                                        <center>
+                                            <font color="red" size="2.5">wrong data</font>
+                                        </center>
+                                       }<form asp-action="final" asp-controller="Order" method="post" class="form">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="form__div">
+                                                        <input type="text" name="Card_number" class="form-control" placeholder=" ">
+                                                        <label for="" class="form__label">Card Number</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-6">
+                                                    <div class="form__div">
+                                                        <input type="date" name="date" class="form-control" placeholder=" ">
+                                                        <label for="" class="form__label">MM / yy</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-6">
+                                                    <div class="form__div">
+                                                        <input type="password" name="cvv" class="form-control" placeholder=" ">
+                                                        <label for="" class="form__label">cvv code</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form__div">
+                                                        <input type="text" name="name" class="form-control" placeholder=" ">
+                                                        <label for=""  class="form__label">name on the card</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <input type="submit" class="btn submit w-100" value="Sumbit"/>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>  

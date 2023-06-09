@@ -1,0 +1,60 @@
+﻿@model restaurant.Models.Food
+
+@{
+    ViewData["Title"] = "Edit";
+    ViewData["admin"] = "active";
+
+}
+<br />
+
+<h1>Edit</h1>
+
+<h4>food</h4>
+<hr />
+
+
+        <div class="adding">
+            <div class="container">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="form-group holder">
+                <label asp-for="food_name" class="control-label"></label>
+                <input asp-for="food_name" class="form-control"  value="@Model.food_name"/>
+                <span asp-validation-for="food_name" class="text-danger"></span>
+            </div>
+            <div class="form-group holder">
+                <label asp-for="food_description" class="control-label"></label>
+                <input asp-for="food_description" class="form-control" value="@Model.food_description"/>
+                <span asp-validation-for="food_description" class="text-danger"></span>
+            </div>
+            <div class="form-group holder">
+                <label asp-for="type" class="control-label"></label>
+                <input asp-for="type" class="form-control" value="@Model.type" />
+                <span asp-validation-for="type" class="text-danger"></span>
+            </div>
+            <div class="form-group holder">
+                <label asp-for="price" class="control-label"></label>
+                <input asp-for="price" class="form-control" value="@Model.price" />
+                <span asp-validation-for="price" class="text-danger"></span>
+            </div>
+            <div class="form-group holder">
+                <img width="150" style="margin-left:150px;display:block" height="150" src="~/@Model.img" id="old" />
+                <label asp-for="img" class="control-label"></label>
+                <input type="file" onchange="deletephoto()" asp-for="img" class="form-control" name="imageFile" />
+                <span asp-validation-for="img" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="show">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

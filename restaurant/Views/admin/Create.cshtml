@@ -1,0 +1,59 @@
+﻿@model restaurant.Models.Food
+
+@{
+    ViewData["Title"] = "Create";
+    ViewData["admin"] = "active";
+
+}
+<br />
+
+<h1>Create</h1>
+
+<h4>food</h4>
+<hr />
+<div class="adding">
+    <div class="container">
+        <form asp-action="Create" enctype="multipart/form-data" >
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group holder">
+                <label asp-for="food_name" class="control-label"></label>
+                <input asp-for="food_name" class="form-control" />
+                <span asp-validation-for="food_name" class="text-danger"></span>
+            </div>
+            <div class="form-group holder">
+                <label asp-for="food_description" class="control-label"></label>
+                <input asp-for="food_description" class="form-control" />
+                <span asp-validation-for="food_description" class="text-danger"></span>
+            </div>
+            <div class="form-group holder">
+                <label asp-for="type" class="control-label"></label>
+                <select asp-for="type" class="form-control" >
+                    <option name="type" value="Beverages">Beverages</option>
+                    <option name="type" value="Pizza">Snacks</option>
+                    <option name="type" value="Burgers">Burgers</option>
+
+                </select>
+                <span asp-validation-for="type" class="text-danger"></span>
+            </div>
+            <div class="form-group holder">
+                <label asp-for="price" class="control-label"></label>
+                <input asp-for="price" class="form-control" />
+                <span asp-validation-for="price" class="text-danger"></span>
+            </div>
+            <div class="form-group holder">
+                <label asp-for="img" class="control-label"></label>
+                <input type="file" asp-for="img" class="form-control" name="imageFile" />
+                <span asp-validation-for="img" class="text-danger"></span>
+            </div>
+            <div class="form-group holder">
+                <input type="submit" value="Add Food" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="show">Back to List</a>
+</div>
+

@@ -1,0 +1,96 @@
+﻿@model IEnumerable<restaurant.Models.Food>
+
+@{
+    ViewData["Title"] = "show";
+    ViewData["admin"]="active";
+}
+<br />
+<h1>show</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div class="menu">
+    <div class="content">
+        
+        <div class="container">
+        <div class="row burger-box">
+            <h2 class="title burger-title"> tasty burger</h2>
+                @if (Model.Where(item => item.type == "Burgers").Any())
+@foreach (var item in Model) {
+            if (item.type == "Burgers")
+            {
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-box">
+                            <div class="menu-image"><img src="~/@Url.Content(item.img)" alt="..."></div>
+                            <h3>   @Html.DisplayFor(modelItem => item.food_name) </h3>
+                            <h6>ID = @Html.DisplayFor(modelItem => item.food_ID)</h6>
+                            <p> @Html.DisplayFor(modelItem => item.food_description)</p>
+                            <div class="price">
+                                <span>  @Html.DisplayFor(modelItem => item.price) $</span>
+                                <div class="btn"> <a asp-action="Edit" asp-route-id="@item.food_ID" class="update">Update</a> <a asp-action="Delete" asp-route-id="@item.food_ID" class="delete">Delete</a> </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+        }
+                    }else
+                {
+                    <h3> Nothing to Show</h3>
+                }
+</div>
+            <div class="row beverage-box">
+                <h2 class="title beverage-title"> tasty beverage</h2>
+                @if (Model.Where(item => item.type == "Beverages").Any())
+                @foreach (var item in Model)
+                {
+                    if (item.type == "Beverages")
+                    {
+                        <div class="col-md-6 col-lg-4">
+                            <div class="menu-box">
+                                <div class="menu-image"><img src="~/@Url.Content(item.img)" alt="..."></div>
+                                <h3>   @Html.DisplayFor(modelItem => item.food_name) </h3>
+                                <h6>ID = @Html.DisplayFor(modelItem => item.food_ID)</h6>
+                                <p> @Html.DisplayFor(modelItem => item.food_description)</p>
+                                <div class="price">
+                                    <span>  @Html.DisplayFor(modelItem => item.price) $</span>
+                                    <div class="btn"> <a asp-action="Edit" asp-route-id="@item.food_ID" class="update">Update</a> <a asp-action="Delete" asp-route-id="@item.food_ID" class="delete">Delete</a> </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+                }else { <center><h2> nothing</h2></center>}
+
+            </div>
+            <div class="row pizaa-box">
+                <h2 class="title pizza-title"> tasty Pizza</h2>
+                @if (Model.Where(item => item.type == "Pizza").Any())
+                @foreach (var item in Model)
+                {
+                    if (item.type == "Pizza")
+                    {
+                        <div class="col-md-6 col-lg-4">
+                            <div class="menu-box">
+                                <div class="menu-image"><img src="~/@Url.Content(item.img)" alt="..."></div>
+                                <h3>   @Html.DisplayFor(modelItem => item.food_name) </h3>
+                                <h6>ID = @Html.DisplayFor(modelItem => item.food_ID)</h6>
+                                <p> @Html.DisplayFor(modelItem => item.food_description)</p>
+                                <div class="price">
+                                    <span>  @Html.DisplayFor(modelItem => item.price) $</span>
+                                    <div class="btn"> <a asp-action="Edit" asp-route-id="@item.food_ID" class="update">Update</a> <a asp-action="Delete" asp-route-id="@item.food_ID" class="delete">Delete</a> </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+                    }else
+                {
+                    <center><h2> nothing</h2></center>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+ 
